@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet"
+          th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:text="${session.user}"> </div>
+
+<section class="buttonsGroup">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-primary" th:href="@{/emails/sent}" methods="get">Enviados</a>
+        <a type="button" class="btn btn-primary" th:href="@{/emails/emails-eliminated}">Eliminados</a>
+    </div>
+</section>
+
+<div>
+    <h2>Emails Received</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>From</th>
+            <th>Date Time</th>
+            <th>Message</th>
+            <th>Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="email : ${emails.receivedEmails}">
+            <td th:text="${email.sender}">
+            <td th:text="${email.date}">
+            <td th:text="${email.body}">
+            <td ><a type="button" class="btn btn-primary" th:href="@{/emails/email-view/{id}(id = ${email.id})}" methods="get"> Ver </a> </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
