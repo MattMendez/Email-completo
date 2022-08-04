@@ -12,7 +12,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public Boolean verifyexist(String email) {
+    public Boolean verifyExist(String email) {
 
         return userRepository.findByEmail(email).isPresent();
     }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<body>
+
+<div th:fragment="actionVar" class="actionVar" style="height: 50px;">
+    <div class="boton" style="float: left;">
+        <a th:href="@{/logout}" id="logOut">Cerrar Sesion</a>
+    </div>
+    <span class="username" th:text="${session.username}"></span>
+
+</div>
+
+</body>
+</html>

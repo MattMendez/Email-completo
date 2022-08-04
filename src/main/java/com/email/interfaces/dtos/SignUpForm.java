@@ -18,4 +18,20 @@ public class SignUpForm {
 
     private String password;
 
+    private String name;
+
+    private String lastName;
+
+    private String address;
+
+    private String phoneNumber;
+
+    private String city;
+
+    private String state;
+
+    private String country;
+
+    private String backUpEmail;
+
 }

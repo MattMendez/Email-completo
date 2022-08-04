@@ -43,7 +43,10 @@ public class User {
 
     private String backUpEmail;
 
+    @ElementCollection
+    private List<String> folders;
+
     @OneToMany
-    private List<com.email.interfaces.entities.Email> emailsSended;
+    private List<com.email.interfaces.entities.Email> emailsSent;
 
 }

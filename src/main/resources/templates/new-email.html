@@ -25,11 +25,16 @@
       </label>
     </div>
 
+    <div class="nMInputGroup mt30">
+      <label >Archivos Adjuntos</label>
+      <input type="file" name="files" id="filesForward" multiple="multiple">
+    </div>
+
     <div>
       <input type="submit" class="btn btn-primary" name="sendEmail">
     </div>
     <div>
-      <a type="button" th:href="@{/new-email}" methods="get" class="btn btn-danger"> Go Back </a>
+      <a type="button" th:href="@{/emails/home}" methods="get" class="btn btn-danger"> Go Back </a>
     </div>
 
   </form>

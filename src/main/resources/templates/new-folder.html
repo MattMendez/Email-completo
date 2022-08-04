@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new-folder</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet"
+          th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+    <div>
+        <form class="form-horizontal" action="#" th:action="@{/emails/newfolder}" th:object="${newFolder}" method="post">
+
+            <div>
+                <label class="col-sm-2 control-label" >Nombre de la nueva carpeta</label>
+                <label>
+                    <input class="form-control" type="text"  th:field="*{folderName}">
+                </label>
+            </div>
+
+            <input class="btn btn-primary" type="submit"  name="sendFolder">
+        </form>
+
+    </div>
+</body>
+</html>

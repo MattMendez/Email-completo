@@ -3,7 +3,6 @@ package com.email.interfaces.controllers;
 import com.email.interfaces.dtos.LoginForm;
 import com.email.interfaces.dtos.SignUpForm;
 import com.email.interfaces.services.LoginService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

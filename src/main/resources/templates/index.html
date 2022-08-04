@@ -1,42 +1,70 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org;" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Index</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-  <link href="../static/css/bootstrap.css" rel="stylesheet"
-        th:href="@{/css/bootstrap.css}">
+  <!--TAB NAVEGADOR-->
+  <title>Not Gmail</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.google.com/a/cpanel/externos.bci.cl/images/favicon.ico">
+
+  <!-- Preoload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Merriweather:wght@300;400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- <link rel="preload" href="../static/css/bootstrap.css" as="style">
+  <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"> -->
+
+
+  <link rel="preload" href="/scss/app.css" as="style">
+  <link rel="stylesheet" href="/scss/app.css">
+  
+  
+ 
+
+
 </head>
+
 <body>
-<h1 align="center"> Not Gmail</h1>
 
-  <div>
-    <form class="form-horizontal" action="#" th:action="@{/users/login}" th:object="${loginForm}" method="post">
+  <header>
+    <h1 class="titleMain">Not Gmail</h1>
+  </header>
 
-      <div>
-        <label class="col-sm-2 control-label" >User Email</label>
-        <label>
-          <input class="form-control" type="text" id="email" name="email" th:field="*{email}">
-        </label>
+  <main>
+    <section class="rectangleMain">
+      <div class="backgroundContent">
+        <form class="formDesign" action="#" th:action="@{/users/login}" th:object="${loginForm}" method="post">
+
+          <div>
+            <label class="col-sm-2 control-label" >Email</label>
+            <label>
+              <input class="form-control" type="text" id="email" name="email" th:field="*{email}">
+            </label>
+          </div>
+    
+          <div>
+            <label class="col-sm-2 control-label" >Contraseña</label>
+            <label>
+              <input class="form-control" type="password"  th:field="*{password}">
+            </label>
+          </div>
+
+          <div class="buttonsLogin">
+            <button class="btn btn-primary" type="submit"  name="sendLogin">Iniciar Sesion</button>
+            <button><a type="button" class="btn btn-warning" th:href="@{/users/new-user}" methods="get"> Registrarse </a></button>
+          </div>
+
+        </form>
       </div>
+    </section>    
+  </main>
 
-      <div>
-        <label class="col-sm-2 control-label" >Password</label>
-        <label>
-          <input class="form-control" type="password"  th:field="*{password}">
-        </label>
-      </div>
+  <footer>
 
-      <input class="btn btn-primary" type="submit"  name="sendLogin">
-    </form>
-
-    <div>
-      <a type="button" class="btn btn-warning" th:href="@{/users/new-user}" methods="get"> New to NotGmail? </a>
-    </div>
-
-
-  </div>
+  </footer>
 
 </body>
 </html>

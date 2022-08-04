@@ -10,11 +10,10 @@
 </head>
 <body>
 <h1>Email to </h1>
-<p th:text="${email.sender}"> </p>
+<p th:text="${emailToAnswer.sender}"> </p>
 <div>
-    <form action="#" th:action="@{/emails/answer-email}" th:object="${email}" method="post">
+    <form action="#" th:action="@{/emails/answer-email}" th:object="${emailToAnswer}" method="post">
 
-        <input type="hidden" id="emailTo" th:value="${email.sender}" th:field="*{receivers}">
         <div>
             <label>Message</label>
             <label>
@@ -26,7 +25,7 @@
             <input type="submit" class="btn btn-primary" name="sendEmail">
         </div>
         <div>
-            <a type="button" th:href="@{/new-email}" methods="get" class="btn btn-danger"> Go Back </a>
+            <a type="button" th:href="@{/emails/home}" methods="get" class="btn btn-danger"> Go Back </a>
         </div>
 
     </form>

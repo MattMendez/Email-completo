@@ -11,29 +11,60 @@
 <body>
 
 <div>
-    <h2>Scams Received</h2>
+    <h2>Vista Individual</h2>
     <table class="table table-hover">
         <thead>
         <tr>
             <th>From</th>
             <th>Date Time</th>
             <th>Message</th>
-            <th>Content</th>
+            <th>Carpeta</th>
         </tr>
         </thead>
         <tbody>
             <td th:text="${email.sender}">
             <td th:text="${email.date}">
             <td th:text="${email.body}">
+            <td th:text="${email.folder}">
         </tbody>
     </table>
+
+    <a type="button" class="btn btn-primary" th:href="@{/emails/erase/{id}(id = ${email.id})}" methods="get" >Eliminar</a>
+
+
+    <form class="form-horizontal" action="#" th:action="@{/emails/updatefolder}" th:object="${updateFolder}" method="post">
+
+        <div>
+            <label class="col-sm-2 control-label" >Cambiar carpeta</label>
+            <label>
+                <input class="form-control" type="text" id="email" name="email" th:field="*{folderName}">
+            </label>
+        </div>
+
+        <div>
+            <label th:text="${email.id}"></label>
+            <label class="col-sm-2 control-label" >email id</label>
+            <label>
+                <input class="form-control" type="text" id="email" name="email" th:field="*{emailId}">
+            </label>
+
+<!--            <input type="hidden"  th:value="${email.id}" th:field="*{emailId}">-->
+        </div>
+
+        <input class="btn btn-primary" type="submit"  name="sendLogin">
+    </form>
+
+</div>
+
+<div>
+    <a type="button" th:href="@{/emails/home}" methods="get" class="btn btn-danger"> Go Back </a>
 </div>
 
 <section class="buttonsGroup">
     <div class="btn-group" role="group" aria-label="Basic example">
         <a type="button" class="btn btn-primary" th:href="@{/emails/answer-email/{id}(id = ${email.id})}" methods="get" >Responder</a>
-        <a type="button" class="btn btn-primary" th:href="@{/emails/received}" methods="get" >Reenviar</a>
-        <a type="button" class="btn btn-primary" th:href="@{/emails/emails-eliminated}">Responder a todos</a>
+        <a type="button" class="btn btn-primary" th:href="@{/emails/resend-email/{id}(id = ${email.id})}" methods="get" >Reenviar</a>
+        <a type="button" class="btn btn-primary" th:href="@{/emails/answer-all/{id}(id = ${email.id})}" methods="get" >Responder a todos</a>
     </div>
 </section>
 

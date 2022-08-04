@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Service
 public class LoginService {
@@ -31,7 +32,7 @@ public class LoginService {
             }
 
 
-            if (userService.verifyexist(loginForm.getEmail())){
+            if (userService.verifyExist(loginForm.getEmail())){
                 httpSession.setAttribute("user", loginForm.getEmail());
 
                 EmailListResponse emailListResponse = emailService.getAllEmails(loginForm.getEmail());
@@ -59,7 +60,7 @@ public class LoginService {
                 && !signUpForm.getPassword().isEmpty()
                 && signUpForm.getEmail().contains("@")) {
 
-            if(!userService.verifyexist(signUpForm.getEmail())){
+            if(!userService.verifyExist(signUpForm.getEmail())){
 
                 userService.registerNewUser(signUpForm);
 

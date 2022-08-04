@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<body>
+
+<div th:fragment="menuWrapper" class="menuWrapper">
+    <ul class="menu" style="float: left;margin-right: 30px;">
+        <li><a th:href="@{/inbox}">Recibidos</a></li>
+        <li><a th:href="@{/inbox/sent}">Enviados</a></li>
+        <li><a th:href="@{/newMessage}">Nuevo Mensaje</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

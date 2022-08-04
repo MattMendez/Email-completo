@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TotallyNotAScamEmail</title>
+    <title>resend email</title>
 
     <!-- Bootstrap CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet"
@@ -11,25 +11,28 @@
 <body>
 
 
-<div>
-    <form action="#" th:action="@{/emails/answer-email}" th:object="${email}" method="post">
+    <div>
+        <form action="#" th:action="@{/emails/resend-email}" th:object="${emailToResend}" method="post">
 
-        <input type="hidden"  th:value="${email.body}" th:field="*{body}">
+            <label>To</label>
+            <label>
+                <input type="text" class="form-control" id="to" name="to" value="" th:field="*{receivers}">
+            </label>
 
-        <label>To</label>
-        <label>
-            <input type="text" class="form-control" id="to" name="to" th:field="*{receivers}">
-        </label>
+            <div>
+                <input type="text" class="form-control" th:value="${emailToResend.body}" th:field="*{body}">
+            </div>
 
-        <div>
-            <input type="submit" class="btn btn-primary" name="sendEmail">
-        </div>
+            <div>
+                <input type="submit" class="btn btn-primary" name="sendEmail">
+            </div>
 
-        <div>
-            <a type="button" th:href="@{/new-email}" methods="get" class="btn btn-danger"> Go Back </a>
-        </div>
+        </form>
 
-    </form>
-</div>
+    </div>
+
+    <div>
+        <a type="button" th:href="@{/emails/home}" methods="get" class="btn btn-danger"> Go Back </a>
+    </div>
 </body>
 </html>

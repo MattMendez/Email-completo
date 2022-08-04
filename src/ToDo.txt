@@ -1,0 +1,6 @@
+Por hacer:
+
+Archivos Adjuntos
+
+● Diagrama de base de datos.
+● Diagrama de arquitectura/clases.

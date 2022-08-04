@@ -17,4 +17,7 @@ public class EmailListResponse {
     List<Email> receivedEmails;
 
     List<Email> sentEmails;
+
+    List<String> folders;
+
 }

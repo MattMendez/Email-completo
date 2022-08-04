@@ -2,40 +2,109 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sign-up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-  <link href="../static/css/bootstrap.css" rel="stylesheet"
-        th:href="@{/css/bootstrap.css}">
+  <!--TAB NAVEGADOR-->
+  <title>Registrarse</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.google.com/a/cpanel/externos.bci.cl/images/favicon.ico">
+
+  <!-- Preoload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Merriweather:wght@300;400;700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- <link rel="preload" href="../static/css/bootstrap.css" as="style">
+  <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"> -->
+
+
+  <link rel="preload" href="/scss/app.css" as="style">
+  <link rel="stylesheet" href="/scss/app.css">
 </head>
-<body>
-  <h1 align="center"> Not Gmail</h1>
 
-  <h2 align="center"> GIVE US YOUR DATA </h2>
+<body>
+
+  <diva class="titleMain">
+    <h1>Not Gmail</h1>
+  </div>
 
   <div>
     <form class="form-horizontal" action="#" th:action="@{/users/sign-up}" th:object="${signUpForm}" method="post">
 
-      <div>
-        <label class="col-sm-2 control-label" >Enter a new Email</label>
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Ingresar Email</label>
         <label>
           <input class="form-control" type="text" id="email" name="email" th:field="*{email}">
         </label>
       </div>
 
-      <div>
-        <label class="col-sm-2 control-label" >Password</label>
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Contraseña</label>
         <label>
           <input class="form-control" type="password"  th:field="*{password}">
         </label>
       </div>
 
-      <input class="btn btn-primary" type="submit"  name="sendLogin">
-    </form>
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Nombre</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{name}">
+        </label>
+      </div>
 
-    <div>
-      <a type="button" class="btn btn-warning" th:href="@{/users/regret}" methods="get"> Go back, you coward </a>
-    </div>
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Apellido</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{lastName}">
+        </label>
+      </div>
+
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Direccion</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{address}">
+        </label>
+      </div>
+
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Numero de telefono</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{phoneNumber}">
+        </label>
+      </div>
+
+      <div class="inputFile"> 
+        <label class="col-sm-2 control-label" >Ciudad</label>
+        <label>
+          <input class="form-control" type="password"  th:field="*{city}">
+        </label>
+      </div>
+
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Provincia</label>
+        <label>
+          <input class="form-control" type="password"  th:field="*{state}">
+        </label>
+      </div>
+
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Ciudad</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{city}">
+        </label>
+      </div>
+
+      <div class="inputFile">
+        <label class="col-sm-2 control-label" >Email de recuperacion</label>
+        <label>
+          <input class="form-control" type="text"  th:field="*{backUpEmail}">
+        </label>
+      </div>
+
+      <div class="buttonRegister">
+        <button class="btn btn-primary btn-lg" type="submit"  name="sendLogin">Enviar</button>
+        <button><a type="button" class="btn btn-warning" th:href="@{/users/regret}" methods="get"> Volver atras</a></button>
+      </div>
+    </form>
 
   </div>
 

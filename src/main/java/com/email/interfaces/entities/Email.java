@@ -32,9 +32,6 @@ public class Email {
 
     private Boolean read;
 
-    @ElementCollection
-    private List<String> folders;
-
     private String folder;
 
     private byte[] file;

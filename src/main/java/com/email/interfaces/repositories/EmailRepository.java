@@ -15,4 +15,10 @@ public interface EmailRepository extends JpaRepository<Email,String> {
 
     List<Email> findAllByReceivers(String receivers);
 
+    List<Email> findAllBySenderAndFolder(String sender, String folder);
+
+    List<Email> findAllByReceiversAndFolder(String receivers, String folder);
+
+    void deleteById(Integer id);
+
 }
